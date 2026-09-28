@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To My Beautiful Queen ❤️ | Our Eternal Love Story</title>
+  
+  <!-- Romantic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Gradients -->
+  <div class="ambient-glow ambient-1"></div>
+  <div class="ambient-glow ambient-2"></div>
+  <div class="ambient-glow ambient-3"></div>
+
+  <!-- Falling Rose Petals & Stardust Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Background Music Audio Element -->
+  <audio id="bgAudio" src="music.mp3" preload="auto"></audio>
+
+  <!-- ==========================================================================
+       ENTRY GATEKEEPER / SURPRISE CURTAIN MODAL
+       ========================================================================== -->
+  <div class="entry-curtain" id="entryCurtain">
+    <div class="entry-card">
+      <div class="entry-heart-icon">💖</div>
+      <h1 class="entry-title">For My Favorite Person</h1>
+      <p class="entry-subtitle">A special surprise handcrafted with all my heart and love just for you...</p>
+      
+      <div class="entry-note">
+        <span>🎧</span>
+        <span>For the most magical experience, turn up your volume or put on headphones!</span>
+      </div>
+
+      <button class="btn-enter-surprise" id="btnEnterSurprise">
+        <span>Tap To Enter My Heart</span>
+        <span>✨</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING MUSIC CONTROLLER
+       ========================================================================== -->
+  <div class="music-dock" id="musicDock">
+    <div class="vinyl-disk" id="vinylDisk" title="Click to Play/Pause">
+      <div class="vinyl-center"></div>
+    </div>
+    <div class="music-info">
+      <span class="music-title">Our Romantic Melody</span>
+      <span class="music-sub">Soft Piano Romance 🎵</span>
+    </div>
+    <div class="music-controls">
+      <button class="btn-music-toggle" id="musicToggleBtn" title="Toggle Music">▶️</button>
+      <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.65" title="Volume">
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       NAVIGATION
+       ========================================================================== -->
+  <nav class="romantic-nav">
+    <a href="#hero" class="nav-logo">
+      <span>Forever Us</span>
+      <span>❤️</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#milestones">Our Story</a></li>
+      <li><a href="#gallery">Memories</a></li>
+      <li><a href="#envelopes">Love Letters</a></li>
+      <li><a href="#secrets">Surprises</a></li>
+      <li><a href="#quiz">Our Quiz</a></li>
+    </ul>
+    <button class="btn-nav-custom" id="openCustomizerBtn" title="Customize photos with your own memories">
+      📷 Change Photos
+    </button>
+  </nav>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main class="page-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-badge">
+        <span>🌹</span>
+        <span>Dedicated to the girl who stole my heart</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        Every Second With You
+        <span>Is Pure Magic ✨</span>
+      </h1>
+
+      <p class="hero-quote">
+        "I loved you yesterday, I love you still, I always have, I always will."
+      </p>
+
+      <!-- LIVE CHRONOMETER / LOVE JOURNEY COUNTER -->
+      <div class="chronometer-wrapper">
+        <div class="chrono-header">
+          <div class="chrono-title-group">
+            <h3>Our Journey Together</h3>
+            <p>Officially Began: March 29, 2025 (2025.03.29)</p>
+          </div>
+          <div class="pulse-badge">
+            <span class="pulse-dot"></span>
+            <span id="heartbeatCounter">Calculating heartbeats...</span>
+          </div>
+        </div>
+
+        <div class="counter-grid">
+          <div class="counter-box">
+            <div class="counter-number" id="chronoDays">00</div>
+            <div class="counter-label">Days</div>
+          </div>
+          <div class="counter-box">
+            <div class="counter-number" id="chronoHours">00</div>
+            <div class="counter-label">Hours</div>
+          </div>
+          <div class="counter-box">
+            <div class="counter-number" id="chronoMins">00</div>
+            <div class="counter-label">Minutes</div>
+          </div>
+          <div class="counter-box">
+            <div class="counter-number" id="chronoSecs">00</div>
+            <div class="counter-label">Seconds</div>
+          </div>
+        </div>
+
+        <!-- FIRST MET HIGHLIGHT -->
+        <div class="first-met-badge">
+          <div class="first-met-text">
+            <strong>✨ The Day We First Met In Person:</strong> January 13, 2026 (2026.01.13)
+          </div>
+          <div class="first-met-counter" id="firstMetCounter">
+            Calculating days...
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#milestones" class="btn-primary">
+          <span>Read Our Story</span>
+          <span>📖</span>
+        </a>
+        <a href="#secrets" class="btn-secondary">
+          <span>Open Mystery Surprise</span>
+          <span>🎁</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MILESTONES & MEMORIES TIMELINE
+         ========================================================================== -->
+    <section id="milestones">
+      <div class="section-header">
+        <span class="section-tag">Chapter by Chapter</span>
+        <h2 class="section-title">The Unforgettable <span>Milestones</span></h2>
+        <p class="section-desc">The key moments that changed my entire universe forever.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- MILESTONE 1: 2025.03.29 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date-badge">📅 March 29, 2025 (2025.03.29)</span>
+            <h4>The Day Two Hearts Became One ❤️</h4>
+            <p>
+              The beautiful day our love story officially started. What began as sweet conversations blossomed into the deepest bond I could ever imagine. You said yes to me, making me the luckiest man alive.
+            </p>
+            <div class="timeline-img-box">
+              <img id="imgMilestoneDating" src="images/dating.jpeg" alt="Started Dating - 2025.03.29">
+            </div>
+          </div>
+        </div>
+
+        <!-- MILESTONE 2: 2026.01.13 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date-badge">📅 January 13, 2026 (2026.01.13)</span>
+            <h4>The Day I First Held You In My Arms ✨</h4>
+            <p>
+              Our very first real-life meeting. Seeing you walk towards me, feeling your warm touch, and hearing your laugh in person—it felt like coming home. A memory forever etched in gold in my mind.
+            </p>
+            <div class="timeline-img-box">
+              <img id="imgMilestoneMet" src="images/first_meet.jpg" alt="First Met - 2026.01.13">
+            </div>
+          </div>
+        </div>
+
+        <!-- MILESTONE 3: FOREVER -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date-badge">♾️ Today & All Our Tomorrows</span>
+            <h4>Every Laugh, Every Hug, Every Future Promise 🌅</h4>
+            <p>
+              Every single day with you is a new favorite memory. Hand in hand, facing the world together, dreaming of our future, and growing deeper in love with every breath.
+            </p>
+            <div class="timeline-img-box">
+              <img id="imgMilestoneHero" src="images/hero_romantic.jpeg" alt="Our Forever Journey">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PHOTO POLAROIDS GALLERY
+         ========================================================================== -->
+    <section id="gallery">
+      <div class="section-header">
+        <span class="section-tag">Captured Feelings</span>
+        <h2 class="section-title">Our Little <span>Memories</span></h2>
+        <p class="section-desc">Click any photo to zoom in and relive the magic!</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery1" src="images/gallery1.jpeg" alt="Sweet Memory 1">
+          </div>
+          <div class="polaroid-caption">My Favorite Person in the World ❤️</div>
+          <div class="polaroid-date">Precious Memory</div>
+        </div>
+
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery2" src="images/gallery2.jpeg" alt="Sweet Memory 2">
+          </div>
+          <div class="polaroid-caption">That Smile That Melts My Heart 🥰</div>
+          <div class="polaroid-date">Pure Happiness</div>
+        </div>
+
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery3" src="images/gallery3.jpeg" alt="Sweet Memory 3">
+          </div>
+          <div class="polaroid-caption">Under The Glowing City Lights ✨</div>
+          <div class="polaroid-date">Magical Nights</div>
+        </div>
+
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery4" src="images/gallery4.jpeg" alt="Sweet Memory 4">
+          </div>
+          <div class="polaroid-caption">Walking Hand In Hand Forever 👫</div>
+          <div class="polaroid-date">Sweet Escapes</div>
+        </div>
+
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery5" src="images/gallery5.jpeg" alt="Sweet Memory 5">
+          </div>
+          <div class="polaroid-caption">You Look Stunning As Always 🌹</div>
+          <div class="polaroid-date">My Queen</div>
+        </div>
+
+        <div class="polaroid-item">
+          <div class="polaroid-pin"></div>
+          <div class="polaroid-img-wrapper">
+            <img id="imgGallery6" src="images/gallery6.jpeg" alt="Sweet Memory 6">
+          </div>
+          <div class="polaroid-caption">Warmest Hugs in the Universe 💖</div>
+          <div class="polaroid-date">Safe In Your Arms</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SURPRISE SUITE 1: "OPEN WHEN..." VIRTUAL ENVELOPES
+         ========================================================================== -->
+    <section id="envelopes">
+      <div class="section-header">
+        <span class="section-tag">Virtual Love Notes</span>
+        <h2 class="section-title">Open When <span>You Need Me</span></h2>
+        <p class="section-desc">Whenever you need my warmth, tap an envelope below to unfold my heart.</p>
+      </div>
+
+      <div class="envelopes-grid">
+        <div class="envelope-card" data-letter="miss">
+          <div class="envelope-icon">💌</div>
+          <h4>Open When You Miss Me</h4>
+          <p>When the miles feel a little too far...</p>
+          <span class="envelope-tag">Tap to Open</span>
+        </div>
+
+        <div class="envelope-card" data-letter="sad">
+          <div class="envelope-icon">🌧️</div>
+          <h4>Open When You Had A Rough Day</h4>
+          <p>When you need a warm, comforting hug...</p>
+          <span class="envelope-tag">Tap to Open</span>
+        </div>
+
+        <div class="envelope-card" data-letter="mad">
+          <div class="envelope-icon">🥺</div>
+          <h4>Open When You're Mad At Me</h4>
+          <p>When silly mistakes happen and you need peace...</p>
+          <span class="envelope-tag">Tap to Open</span>
+        </div>
+
+        <div class="envelope-card" data-letter="doubt">
+          <div class="envelope-icon">💖</div>
+          <h4>Open When You Wonder About My Love</h4>
+          <p>When you need a reminder of how deep my love runs...</p>
+          <span class="envelope-tag">Tap to Open</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SURPRISE SUITE 2: THE 3D SECRET MYSTERY BOX
+         ========================================================================== -->
+    <section class="gift-section" id="secrets">
+      <div class="section-header">
+        <span class="section-tag">Special Delivery</span>
+        <h2 class="section-title">The Secret <span>Mystery Box</span></h2>
+        <p class="section-desc">I hid a secret confession inside this glowing box. Are you ready?</p>
+      </div>
+
+      <div class="gift-stage">
+        <div class="gift-box-3d" id="giftBox">
+          <div class="gift-ribbon-v"></div>
+          <div class="gift-ribbon-h"></div>
+          <div class="gift-bow">🎀</div>
+        </div>
+        <div class="gift-instruction" id="giftInstruction">
+          Tap the gift to unwrap your secret surprise ✨
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SURPRISE SUITE 3: "REASONS WHY I LOVE YOU" JAR
+         ========================================================================== -->
+    <section id="jar">
+      <div class="section-header">
+        <span class="section-tag">Infinite Affection</span>
+        <h2 class="section-title">Reasons Why <span>I Love You</span></h2>
+        <p class="section-desc">There are thousands of reasons, but here is a little taste of why you're my world.</p>
+      </div>
+
+      <div class="jar-container">
+        <div class="jar-graphic" id="jarGraphic" title="Click the jar!">🫙✨</div>
+        <div class="reason-display-card">
+          <span class="reason-count-tag" id="reasonCountTag">Reason #1 of 1000+</span>
+          <div class="reason-text" id="reasonText">
+            "The way your eyes sparkle whenever you smile at me."
+          </div>
+        </div>
+        <button class="btn-get-reason" id="btnGetReason">
+          <span>Give Me Another Reason ❤️</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SURPRISE SUITE 4: SWEET ROMANTIC QUIZ
+         ========================================================================== -->
+    <section id="quiz">
+      <div class="section-header">
+        <span class="section-tag">How Well Do You Remember?</span>
+        <h2 class="section-title">Our Little <span>Love Quiz</span></h2>
+        <p class="section-desc">Answer these 3 special questions to unlock your official love certificate!</p>
+      </div>
+
+      <div class="quiz-wrapper">
+        <!-- Question 1 -->
+        <div class="quiz-card active" id="quizCard1">
+          <div class="quiz-question">1. When did our love story officially begin? 💕</div>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-correct="true">A) March 29, 2025 (2025.03.29) ✨</button>
+            <button class="quiz-btn" data-correct="false">B) April 14, 2025</button>
+            <button class="quiz-btn" data-correct="false">C) February 14, 2025</button>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-card" id="quizCard2">
+          <div class="quiz-question">2. When was the magical day we first met in person? 👫</div>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-correct="false">A) December 25, 2025</button>
+            <button class="quiz-btn" data-correct="true">B) January 13, 2026 (2026.01.13) 💖</button>
+            <button class="quiz-btn" data-correct="false">C) February 01, 2026</button>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-card" id="quizCard3">
+          <div class="quiz-question">3. Truth time: Who loves the other more? 🤭</div>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-any-correct="true">A) He loves you to infinity and beyond! 🚀</button>
+            <button class="quiz-btn" data-any-correct="true">B) You love him to the moon and stars! 🌙</button>
+            <button class="quiz-btn" data-any-correct="true">C) Both of us love each other infinitely! ❤️</button>
+          </div>
+        </div>
+
+        <!-- Certificate Box -->
+        <div class="certificate-box" id="certificateBox">
+          <div class="cert-title">Official Certificate of Infinite Love 🏆</div>
+          <div class="cert-subtitle">Awarded by the Universe with Highest Honors</div>
+          <div>This certifies that</div>
+          <div class="cert-recipient">My Beautiful Girlfriend</div>
+          <div class="cert-desc">
+            is officially crowned as the most precious, gorgeous, caring, and irreplaceable soul in the entire galaxy. You hold my heart forever and always.
+          </div>
+          <div style="font-weight: 700; color: #800f2f; margin-top: 15px;">
+            Certified Valid For All Eternity ♾️❤️
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SURPRISE FINALE: "WILL YOU BE MY FOREVER?"
+         ========================================================================== -->
+    <section id="finale">
+      <div class="proposal-box">
+        <h2 class="proposal-title">One Last Question, My Love...</h2>
+        <p class="proposal-sub">Through every sunset, every thunderstorm, and every starry night...</p>
+        <p style="font-size: 1.8rem; font-family: var(--font-serif); color: #fff; margin-bottom: 35px;">
+          Will you be my forever and always? 💍✨
+        </p>
+
+        <div class="proposal-buttons">
+          <button class="btn-yes" id="btnYes">YES! ALWAYS! 💖</button>
+          <button class="btn-no" id="btnNo">No 😜</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       LETTER MODAL
+       ========================================================================== -->
+  <div class="letter-modal" id="letterModal">
+    <div class="letter-paper">
+      <button class="letter-close-btn" id="letterCloseBtn">&times;</button>
+      <h3 id="letterTitle">A Love Letter</h3>
+      <div class="letter-body" id="letterBody">
+        Content goes here...
+      </div>
+      <div class="letter-footer">
+        Forever & Always Yours ❤️
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged view">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-date" id="lightboxDate"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PHOTO CUSTOMIZER MODAL (IN-BROWSER PHOTO SWAPPER)
+       ========================================================================== -->
+  <div class="customizer-modal" id="customizerModal">
+    <div class="customizer-card">
+      <h3>📷 Personalize Your Photos</h3>
+      <p class="customizer-tip">
+        Select your favorite photos from your device to instantly replace the gallery and milestone pictures!
+      </p>
+
+      <div class="customizer-slots">
+        <div class="custom-slot">
+          <label>Dating Memory (2025.03.29)</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgMilestoneDating">
+        </div>
+        <div class="custom-slot">
+          <label>First Met Memory (2026.01.13)</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgMilestoneMet">
+        </div>
+        <div class="custom-slot">
+          <label>Gallery Polaroid 1</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgGallery1">
+        </div>
+        <div class="custom-slot">
+          <label>Gallery Polaroid 2</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgGallery2">
+        </div>
+        <div class="custom-slot">
+          <label>Gallery Polaroid 3</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgGallery3">
+        </div>
+        <div class="custom-slot">
+          <label>Gallery Polaroid 4</label>
+          <input type="file" accept="image/*" class="custom-file-input" data-target-id="imgGallery4">
+        </div>
+      </div>
+
+      <div style="text-align: right; display: flex; gap: 10px; justify-content: flex-end;">
+        <button class="btn-secondary" id="closeCustomizerBtn">Cancel</button>
+        <button class="btn-primary" id="saveCustomizerBtn">Save Photos ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <p>Crafted with endless love & devotion <span class="footer-heart">❤️</span> for my Queen</p>
+    <p style="font-size: 0.82rem; margin-top: 8px; color: #a0717e;">
+      Milestones: 2025.03.29 & 2026.01.13 • To Eternity and Beyond ✨
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
